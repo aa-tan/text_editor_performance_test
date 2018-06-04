@@ -110,7 +110,8 @@ def log_all(proc_list):
                 fname = "sublime"
         with open("./logs/full_log_{}.csv".format(fname), "w") as f:
             f.write("cpu percent, memory percent\n")
-            while True:
+            counter = 0
+            while counter < 120:
                 time.sleep(1)
                 cpu = get_cpu_usage(proc_list)
                 mem = get_memory_usage(proc_list)
@@ -124,6 +125,7 @@ def log_all(proc_list):
                 f.write("{},{}\n".format(cpu, mem))
                 print "Total cpu usage is: {}%".format(cpu)
                 print "Total mem usage is: {}%".format(mem)
+                counter += 1
             return
     except:
         print "\nMaximum reached cpu usage was   : {}%".format(max_cpu)
