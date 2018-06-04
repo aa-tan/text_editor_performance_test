@@ -1,5 +1,5 @@
 # Text Editor Performance Measure
-
+#### As part of Operating Systems class final project
 This script can be used to measure the CPU and Memory usage of an application.
 
 ### Usage
